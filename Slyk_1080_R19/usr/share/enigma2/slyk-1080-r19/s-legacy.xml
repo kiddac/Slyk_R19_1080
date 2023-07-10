@@ -1,0 +1,97 @@
+<skin>
+	<!-- About.py -->
+	<screen name="AboutOE" title="Image Information" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="main-template-2"/>
+		<panel name="v5-services"/>
+		<widget source="Title" render="Label" position="90,123" size="1200,52" valign="center" halign="center" font="Regular;39" noWrap="1" zPosition="2" transparent="1" foregroundColor="white" backgroundColor="panelblue"/>
+		<eLabel position="1357,400" size="473,52" backgroundColor="bgdarkblue" zPosition="-1"/>
+		<widget source="lab1" render="Label" position="1372,400" size="443,52" font="Regular;39" foregroundColor="white" backgroundColor="bgdarkblue" valign="center" halign="center" noWrap="1" transparent="1" zPosition="4"/>
+		<widget source="lab2" render="Label" position="1372,459" size="443,32" font="Regular;27" foregroundColor="white" backgroundColor="bgdarkblue" transparent="1" valign="center" halign="center" zPosition="1"/>
+		<widget source="lab3" render="Label" position="1372,491" size="443,64" font="Regular;27" foregroundColor="white" backgroundColor="bgdarkblue" transparent="1" valign="top" halign="center" zPosition="1"/>
+		<widget name="AboutScrollLabel" position="150,228" size="1080,672" transparent="1" zPosition="1" foregroundColor="white" backgroundColor="bgdarkblue" font="Regular;36"/>
+		<eLabel position="1357,570" size="473,52" backgroundColor="bgdarkblue" zPosition="-1"/>
+		<eLabel text="Slyk 1080 R19" position="1372,570" size="443,52" foregroundColor="white" backgroundColor="bgdarkblue" font="Regular;39" valign="center" halign="center" transparent="1" zPosition="1"/>
+		<eLabel text="There are alternative layouts for some screens. These can be editted via extras.xml that lives in my skin folder /usr/share/enigma2/slyk-1080-r19" font="Regular;24" position="1372,630" size="443,113" foregroundColor="white" backgroundColor="backgroundmid" zPosition="2" transparent="1" halign="center"/>
+		<eLabel text="Slyk 1080 R19\nby Kidda C (2019)\n\nFor the latest version of my skins visit linuxsat-support.com or if you would like to treat me to a beer, paypal.me/kiddac" font="Regular;24" position="1372,758" size="443,200" foregroundColor="white" backgroundColor="backgroundmid" zPosition="2" transparent="1" halign="center"/>
+		<panel name="New-Buttons-T2"/>
+		<panel name="t2-InfoButton"/>
+	</screen>
+	<!-- legacy -->
+	<screen name="About" title="Image Information" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="AboutOE"/>
+	</screen>
+	<screen name="Devices" title="Device Information" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="main-template"/>
+		<panel name="settings"/>
+		<panel name="t3-panel-bg"/>
+		<eLabel position="156,506" size="645,48" backgroundColor="skylightrow" zPosition="-1"/>
+		<ePixmap pixmap="myicons/white-right.png" position="766,512" size="25,38" alphatest="blend" transparent="1"/>
+		<widget source="TunerHeader" render="Label" position="171,506" size="615,48" font="Regular;39" backgroundColor="skylightrow" foregroundColor="white" transparent="1" zPosition="1"/>
+		<eLabel position="156,722" size="645,48" backgroundColor="skylightrow" zPosition="-1"/>
+		<ePixmap pixmap="myicons/white-right.png" position="766,728" size="25,38" alphatest="blend" transparent="1"/>
+		<widget source="HDDHeader" render="Label" position="171,722" size="615,48" font="Regular;39" backgroundColor="skylightrow" foregroundColor="white" transparent="1" zPosition="1"/>
+		<eLabel position="156,830" size="645,48" backgroundColor="skylightrow" zPosition="-1"/>
+		<ePixmap pixmap="myicons/white-right.png" position="766,836" size="25,38" alphatest="blend" transparent="1"/>
+		<widget source="MountsHeader" render="Label" position="171,830" size="615,48" font="Regular;39" backgroundColor="skylightrow" foregroundColor="white" transparent="1" zPosition="1"/>
+		<eLabel position="850,506" size="915,210" backgroundColor="skylightrow" zPosition="-1"/>
+		<eLabel position="850,722" size="915,102" backgroundColor="skydarkrow" zPosition="-1"/>
+		<eLabel position="850,830" size="915,102" backgroundColor="skylightrow" zPosition="-1"/>
+		<widget source="nims" render="Label" position="865,506" size="885,210" font="Regular;36" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" zPosition="1"/>
+		<widget source="hdd" render="Label" position="865,722" size="885,102" font="Regular;36" backgroundColor="skydarkblue" foregroundColor="white" transparent="1" zPosition="1"/>
+		<widget source="mounts" render="Label" position="865,830" size="885,102" font="Regular;36" transparent="1" backgroundColor="skydarkblue" foregroundColor="white" zPosition="1"/>
+	</screen>
+	<screen name="SystemMemoryInfo" title="Memory Information" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="main-template-2"/>
+		<panel name="v5-services"/>
+		<widget source="Title" render="Label" position="90,123" size="1200,52" valign="center" halign="center" font="Regular;39" noWrap="1" zPosition="2" transparent="1" foregroundColor="white" backgroundColor="panelblue"/>
+		<widget source="lab1" render="Label" position="1372,400" size="443,52" font="Regular;39" foregroundColor="white" backgroundColor="bgdarkblue" valign="center" halign="center" noWrap="1" transparent="1" zPosition="4"/>
+		<widget source="lab2" render="Label" position="1372,459" size="443,32" font="Regular;27" foregroundColor="white" backgroundColor="bgdarkblue" transparent="1" valign="center" halign="center" zPosition="1"/>
+		<widget source="lab3" render="Label" position="1372,491" size="443,64" font="Regular;27" foregroundColor="white" backgroundColor="bgdarkblue" transparent="1" valign="top" halign="center" zPosition="1"/>
+		<widget name="AboutScrollLabel" position="150,228" size="1080,645" transparent="1" zPosition="1" foregroundColor="white" backgroundColor="bgdarkblue" font="Regular;36"/>
+		<panel name="New-Buttons-T2"/>
+	</screen>
+	<screen name="SystemNetworkInfo" title="Network Information" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="backgroundmid">
+		<panel name="main-template-2"/>
+		<panel name="v5-services"/>
+		<widget source="Title" render="Label" position="90,123" size="1200,52" valign="center" halign="center" font="Regular;39" noWrap="1" zPosition="2" transparent="1" foregroundColor="white" backgroundColor="panelblue"/>
+		<widget name="AboutScrollLabel" position="150,228" size="1080,645" transparent="1" zPosition="1" foregroundColor="white" backgroundColor="bgdarkblue" font="Regular;30"/>
+		<widget source="IFtext" render="Label" position="150,810" size="180,45" valign="center" zPosition="10" font="Regular;36" halign="left" foregroundColor="white" backgroundColor="bgdarkblue" transparent="1"/>
+		<widget source="IF" render="Label" position="460,810" size="563,45" zPosition="10" valign="center" font="Regular;36" halign="left" foregroundColor="white" backgroundColor="bgdarkblue" transparent="1"/>
+		<widget source="Statustext" render="Label" position="150,854" size="173,45" valign="center" zPosition="10" font="Regular;36" halign="left" foregroundColor="white" backgroundColor="bgdarkblue" transparent="1"/>
+		<widget name="statuspic" pixmaps="buttons/button_green.png,buttons/button_green_off.png" position="460,865" zPosition="10" size="23,24" transparent="1" alphatest="blend"/>
+		<panel name="New-Buttons-T2"/>
+	</screen>
+	<!-- Ipkg.py -->
+	<!-- ipk install progress bar -->
+	<screen name="Ipkg" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="backgroundmid" title="IPK Installer">
+		<panel name="main-template"/>
+		<panel name="v5-services"/>
+		<panel name="t3-panel-bg"/>
+		<ePixmap pixmap="2018-backgrounds/infobox.png" position="center,590" size="1638,279" transparent="1" alphatest="blend" zPosition="-1"/>
+		<eLabel text="Installing IPK" position="center,590" size="1360,54" foregroundColor="white" backgroundColor="skydarkblue" font="Regular;39" valign="center" halign="center" transparent="1" zPosition="10"/>
+		<widget name="package" position="center,644" size="1360,81" font="Regular;39" foregroundColor="skydarkblue" backgroundColor="#d7d7df" valign="center" halign="center" transparent="1"/>
+		<ePixmap pixmap="2018-progress/1360-12-bg.png" position="center,725" size="1360,12" transparent="1" alphatest="blend" zPosition="1"/>
+		<widget name="activityslider" position="center,725" size="1360,12" pixmap="2018-progress/1360-12.png" backgroundColor="transparent" transparent="1" zPosition="2"/>
+		<widget name="status" position="center,737" size="1360,81" font="Regular;39" foregroundColor="skydarkblue" backgroundColor="#d7d7df" valign="center" halign="center" transparent="1"/>
+		<ePixmap pixmap="2018-progress/1360-12-bg.png" position="center,818" size="1360,12" transparent="1" alphatest="blend" zPosition="1"/>
+		<widget name="slider" position="center,818" size="1360,12" pixmap="2018-progress/1360-12.png" backgroundColor="transparent" transparent="1" zPosition="2"/>
+	</screen>
+	<!-- LanguageSelection.py -->
+	<screen name="LanguageSelection" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="backgroundmid" title="Language selection" zPosition="4">
+		<panel name="main-template"/>
+		<panel name="v5-services"/>
+		<panel name="t3-panel-bg"/>
+		<panel name="setup-panel-bars"/>
+		<widget source="languages" render="Listbox" position="center,503" size="1360,432" font="Regular;39" backgroundColor="skylightrow" selectionPixmap="2018-selectbars/menu-bar-54.png" backgroundPixmap="2018-selectbars/blank.png" itemHeight="54" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1">
+			<convert type="TemplatedMultiContent">{"template": [
+			MultiContentEntryPixmapAlphaBlend(pos = (15,6), size = (57,42), png = 2), # index 2 is the pixmap,
+			MultiContentEntryText(pos = (87,0), size = (1258,54), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1 is the language name,
+			],
+			"fonts": [gFont("Regular",39)],
+			"itemHeight": 54
+			}</convert>
+		</widget>
+		<panel name="New-Buttons-T1"/>
+		<panel name="t1-OKButton"/>
+	</screen>
+</skin>
