@@ -59,12 +59,12 @@
 	<!-- ##SoftwarePanel## -->
 	<!-- /lib/python/Plugins/Extensions/Infopanel/SoftwarePanel.py -->
 	<!-- software update -->
-	<screen name="SoftwarePanel" position="0,0" size="1920,1080" backgroundColor="backgroundmid" flags="wfNoBorder" title="Software Panel">
+	<screen name="SoftwareUpdate" position="0,0" size="1920,1080" backgroundColor="backgroundmid" flags="wfNoBorder" title="Software Panel">
 		<panel name="main-template-2"/>
 		<panel name="v5-services"/>
 		<widget source="Title" render="Label" position="90,123" size="1200,52" valign="center" halign="center" font="Regular;39" noWrap="1" zPosition="2" transparent="1" foregroundColor="white" backgroundColor="panelblue"/>
-		<widget name="packagetext" position="150,175" size="345,53" font="Regular;33" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" transparent="1" zPosition="2"/>
-		<widget name="packagenr" position="495,175" size="75,53" font="Regular;33" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="right" transparent="1" zPosition="2"/>
+		<widget name="package_text" position="150,175" size="345,53" font="Regular;33" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="left" transparent="1" zPosition="2"/>
+		<widget name="package_count" position="495,175" size="75,53" font="Regular;33" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="right" transparent="1" zPosition="2"/>
 		<widget source="list" render="Listbox" position="150,228" size="1080,675" backgroundColor="bgdarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="2018-selectbars/bar-75.png" itemHeight="75" scrollbarMode="showOnDemand" transparent="1">
 			<convert type="TemplatedMultiContent">{"template": [
 			MultiContentEntryText(pos = (15, 6), size = (975, 45), font=0, flags = RT_HALIGN_LEFT, text = 0, color = 0x00ffffff, color_sel = 0x00133171), # index 0 is the name
@@ -72,17 +72,15 @@
 			MultiContentEntryPixmapAlphaBlend(pos = (993, 2), size = (72, 72), png = 4), # index 4 is the status pixmap
 			],
 			"fonts": [gFont("Regular",30),gFont("Regular",24)],
-			"itemHeight": 75
+			"itemHeight": 75,
+			"scrollbarMode": "showOnDemand"
 			}</convert>
 		</widget>
-		<widget name="a_off" position="1161,189" size="69,24" pixmap="icons/aoff2.png" alphatest="blend" zPosition="1"/>
-		<widget name="a_red" position="1161,189" size="69,24" pixmap="icons/ared2.png" alphatest="blend" zPosition="1"/>
-		<widget name="a_yellow" position="1161,189" size="69,24" pixmap="icons/ayellow2.png" alphatest="blend" zPosition="1"/>
-		<widget name="a_green" position="1161,189" size="69,24" pixmap="icons/agreen2.png" alphatest="blend" transparent="1" zPosition="1"/>
-		<ePixmap pixmap="buttons/key_red.png" position="153,1001" size="36,36" alphatest="blend" zPosition="2"/>
-		<widget name="key_red" position="201,996" size="315,47" font="Regular;39" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2"/>
-		<widget name="key_green_pic" pixmap="buttons/key_green.png" position="528,1001" size="36,36" alphatest="blend" zPosition="2"/>
-		<widget name="key_green" position="576,996" size="315,47" font="Regular;39" halign="left" valign="center" transparent="1" noWrap="1" foregroundColor="skyblue" backgroundColor="backgroundbot" zPosition="2"/>
+		<widget name="traffic_off" position="1161,189" size="69,24" pixmap="icons/aoff2.png" alphatest="blend" zPosition="1"/>
+		<widget name="traffic_red" position="1161,189" size="69,24" pixmap="icons/ared2.png" alphatest="blend" zPosition="1"/>
+		<widget name="traffic_yellow" position="1161,189" size="69,24" pixmap="icons/ayellow2.png" alphatest="blend" zPosition="1"/>
+		<widget name="traffic_green" position="1161,189" size="69,24" pixmap="icons/agreen2.png" alphatest="blend" transparent="1" zPosition="1"/>
+		<panel name="New-Buttons-T2"/>
 	</screen>
 	<!-- Info Panel Infos -->
 	<screen name="Info" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="backgroundmid" title="Info">

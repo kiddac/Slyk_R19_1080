@@ -307,6 +307,14 @@
 			<convert type="EventName">FullDescription</convert>
 		</widget>
 	</screen>
+	<!-- epg - show bouquet on launch -->
+	<screen name="BouquetSelector" title="Select a bouquet" position="0,0" size="1920,1080" backgroundColor="backgroundmid" flags="wfNoBorder" transparent="0">
+		<panel name="main-template"/>
+		<panel name="v5-services"/>
+		<panel name="t3-panel-bg"/>
+		<panel name="panel-bars-left"/>
+		<widget name="menu" textOffset="15,6" position="150,503" size="796,432" selectionPixmap="2018-selectbars/menu-bar-54.png" backgroundPixmap="2018-selectbars/blank.png" itemHeight="54" font="Regular;39" transparent="1" enableWrapAround="1" scrollbarMode="showNever"/>
+	</screen>
 	<!-- epg tabs hack - red button popup -->
 	<screen name="OptionDialog" position="center,center" size="360,195" backgroundColor="transparent" flags="wfNoBorder" zPosition="5">
 		<ePixmap pixmap="2018-backgrounds/optiondialog.png" position="0,0" size="360,195" alphatest="blend" zPosition="-1"/>
