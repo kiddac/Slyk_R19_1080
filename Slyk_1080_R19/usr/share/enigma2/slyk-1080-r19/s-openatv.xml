@@ -511,7 +511,7 @@ self.instance.move(ePoint((desktop_w-wsizex)//2, (desktop_h-wsizey)//2))</applet
 		<panel name="main-template-2"/>
 		<panel name="v5-services"/>
 		<widget source="Title" render="Label" position="90,123" size="1200,52" valign="center" halign="center" font="Regular;39" noWrap="1" zPosition="2" transparent="1" foregroundColor="white" backgroundColor="panelblue"/>
-		<widget name="picture" position="352,227" size="676,676" alphatest="blend" scaleFlags="scaleCenter" transparent="1" />
+		<widget name="picture" position="352,227" size="676,676" alphatest="blend" scaleFlags="scaleCenter" transparent="1"/>
 		<panel name="New-Buttons-T2"/>
 		<eLabel text="Slyk 1080 R19" position="1372,570" size="443,52" foregroundColor="white" backgroundColor="bgdarkblue" font="Regular;39" valign="center" halign="center" transparent="1" zPosition="1"/>
 		<eLabel text="There are alternative layouts for some screens. These can be editted via extras.xml that lives in my skin folder /usr/share/enigma2/slyk-1080-r19" font="Regular;24" position="1372,630" size="443,113" foregroundColor="white" backgroundColor="backgroundmid" zPosition="2" transparent="1" halign="center"/>
@@ -627,7 +627,7 @@ self.instance.move(ePoint((desktop_w-wsizex)//2, (desktop_h-wsizey)//2))</applet
 		<widget name="QuestionPixmap" conditional="QuestionPixmap" pixmap="icons/input_question.png" position="15,0" size="53,53" alphatest="blend"/>
 		<widget name="InfoPixmap" conditional="InfoPixmap" pixmap="icons/input_info.png" position="15,0" size="53,53" alphatest="blend"/>
 		<widget name="icon" conditional="icon" position="15,0" size="53,53" pixmaps="icons/input_question.png,icons/input_info.png,icons/input_info.png,icons/input_error.png,icons/input_info.png" alphatest="blend" scale="1" transparent="1"/>
-		<widget name="text" position="0,10" size="500,0" font="Regular;39" transparent="1" wrap="1" />
+		<widget name="text" position="0,10" size="500,0" font="Regular;39" transparent="1" wrap="1"/>
 		<widget name="list" position="0,90" size="500,0" conditional="list" enableWrapAround="1" font="Regular;39" textOffset="15,6" backgroundColor="messageboxbg" transparent="1" selectionPixmap="2018-selectbars/bar-54.png" itemHeight="54" scrollbarMode="showOnDemand"/>
 		<applet type="onLayoutFinish">
 from enigma import getDesktop, eSize, ePoint
@@ -901,6 +901,79 @@ self["output"].l.setFont(1, gFont("Regular", 27))</applet>
 		<widget name="list" position="150,228" size="1080,675" backgroundColor="bgdarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="2018-selectbars/bar-75.png" itemHeight="75" scrollbarMode="showNever" transparent="1"/>
 		<panel name="t2-OKButton"/>
 	</screen>
+	<screen name="PluginBrowserList" position="0,0" size="1920,1080" backgroundColor="backgroundmid" flags="wfNoBorder" title="Plugin browser">
+		<panel name="main-template-2"/>
+		<panel name="v5-services"/>
+		<widget source="Title" render="Label" position="90,123" size="1200,52" valign="center" halign="center" font="Regular;39" noWrap="1" zPosition="2" transparent="1" foregroundColor="white" backgroundColor="panelblue"/>
+		<widget name="description" position="150,174" size="1080,60" font="Regular;30" foregroundColor="white" backgroundColor="backgroundtop" valign="center" halign="left" transparent="1" zPosition="2"/>
+		<widget source="pluginList" render="Listbox" position="150,228" size="1080,675" foregroundColor="white" backgroundColor="bgdarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="2018-selectbars/bar-75.png" itemHeight="75" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="2" listOrientation="vertical">
+			<convert type="TemplatedMultiContent">
+				{
+					"template": [
+						MultiContentEntryPixmapAlphaBlend(pos=(15, 9), size=(150, 60), png=3, flags=BT_SCALE),
+						MultiContentEntryText(pos = (180, 12), size = (885, 45), font=0, flags = RT_HALIGN_LEFT, text = 1),
+						MultiContentEntryText(pos = (180, 45), size = (885, 30), font=1, flags = RT_HALIGN_LEFT, text = 2)
+
+					],
+					"fonts": [gFont("Regular", 30),gFont("Regular", 20)],
+					"itemHeight": 75
+				}
+			</convert>
+		</widget>
+		<panel name="New-Buttons-T2"/>
+		<panel name="t2-MenuButton"/>
+		<panel name="t2-OKButton-pos2"/>
+	</screen>
+	<screen name="PluginBrowserGrid" position="0,0" size="1920,1080" backgroundColor="backgroundmid" flags="wfNoBorder" title="Plugin browser">
+		<panel name="main-template-2"/>
+		<panel name="v5-services"/>
+		<widget source="Title" render="Label" position="90,123" size="1200,52" valign="center" halign="center" font="Regular;39" noWrap="1" zPosition="2" transparent="1" foregroundColor="white" backgroundColor="panelblue"/>
+		<widget name="description" position="150,174" size="1080,60" font="Regular;30" foregroundColor="white" backgroundColor="backgroundtop" valign="center" halign="left" transparent="1" zPosition="2"/>
+		<widget source="pluginGrid" render="Listbox" position="150,228" size="1080,675" backgroundColor="bgdarkblue" foregroundColor="white" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" conditional="pluginGrid" listOrientation="grid" scrollbarMode="showNever" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{
+				"template":
+					[
+					MultiContentEntryText(pos=(0, 0), size=(265, 120), font=0),
+					MultiContentEntryText(pos=(6, 6), size=(253, 108), font=0, backcolor = None),
+					MultiContentEntryPixmapAlphaBlend(pos=(55, 18), size=(150, 60), png=3, flags=BT_SCALE),
+					MultiContentEntryText(pos=(15,84), size=(230, 48), font=0, flags=RT_VALIGN_TOP | RT_HALIGN_CENTER | RT_WRAP, text=1)
+					],
+				"fonts": [parseFont("Regular;18")],
+				"itemWidth": 265,
+				"itemHeight": 135
+				}
+			</convert>
+		</widget>
+		<panel name="New-Buttons-T2"/>
+		<panel name="t2-MenuButton"/>
+		<panel name="t2-OKButton-pos2"/>
+	</screen>
+	<screen name="PluginAction" title="Plugin Browser Action" position="0,0" size="1920,1080" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="main-template-2"/>
+		<panel name="v5-services"/>
+		<widget source="Title" render="Label" position="90,123" size="1200,52" valign="center" halign="center" font="Regular;39" noWrap="1" zPosition="2" transparent="1" foregroundColor="white" backgroundColor="panelblue"/>
+		<widget name="description" position="150,174" size="1080,165" font="Regular;36" foregroundColor="white" backgroundColor="backgroundtop" valign="center" halign="left" transparent="1" zPosition="2"/>
+		<widget source="plugins" render="Listbox" position="150,228" size="1080,675" foregroundColor="white" backgroundColor="bgdarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="2018-selectbars/bar-75.png" itemHeight="75" transparent="1" enableWrapAround="1" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">
+				{
+				"template":
+					[
+					MultiContentEntryPixmapAlphaBlend(pos=(15, 0), size=(75, 75), png=6, flags=BT_SCALE),
+					MultiContentEntryText(pos=(120, 0), size=(945, 75), font=0, flags=RT_VALIGN_CENTER, text=2, color=0xffffff),
+					MultiContentEntryText(pos=(120, 6), size=(633, 30), font=1, flags=RT_VALIGN_CENTER, text=3, color=0xffffff),
+					MultiContentEntryText(pos=(768, 6), size=(210, 30), font=1, flags=RT_VALIGN_CENTER, text=5, color=0xffffff),
+					MultiContentEntryText(pos=(120, 36), size=(858, 30), font=2, flags=RT_VALIGN_CENTER, text=4, color=0xffffff),
+					MultiContentEntryPixmapAlphaBlend(pos=(993, 1), size=(72, 72), png=7, flags=BT_SCALE)
+					],
+				"fonts": [parseFont("Regular;30"), parseFont("Regular;24"), parseFont("Regular;21")],
+				"itemHeight": 75
+				}
+			</convert>
+		</widget>
+		<panel name="New-Buttons-T2"/>
+		<panel name="t2-OKButton-pos2"/>
+	</screen>
 	<!-- RdsDisplay.py - RdsInfoDisplay RassInteractive - not skinned -->
 	<!-- RestartNetwork.py -->
 	<screen name="RestartNetwork" position="center,center" size="900,150" title="Restart Network Adapter">
@@ -1153,7 +1226,7 @@ self["output"].l.setFont(1, gFont("Regular", 27))</applet>
 		<panel name="v5-tv-guide"/>
 		<widget source="Title" render="Label" position="90,123" size="1200,52" valign="center" halign="center" font="Regular;39" noWrap="1" zPosition="2" transparent="1" foregroundColor="white" backgroundColor="panelblue"/>
 		<widget name="loglist" conditional="loglist" textOffset="15,6" position="105,190" size="1170,756" font="Regular;39" foregroundColor="white" backgroundColor="bgdarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" scrollbarMode="showOnDemand" itemHeight="54" selectionPixmap="2018-selectbars/bar-54.png" transparent="1"/>
-		<widget name="log" conditional="log" textOffset="15,0" position="105,190" size="1170,756" font="Regular;39" foregroundColor="white" backgroundColor="bgdarkblue" scrollbarMode="showOnDemand"  transparent="1"/>
+		<widget name="log" conditional="log" textOffset="15,0" position="105,190" size="1170,756" font="Regular;39" foregroundColor="white" backgroundColor="bgdarkblue" scrollbarMode="showOnDemand" transparent="1"/>
 		<panel name="New-Buttons-T2"/>
 	</screen>
 	<!-- Timers.py -->
