@@ -953,7 +953,7 @@ self["output"].l.setFont(1, gFont("Regular", 27))</applet>
 		<panel name="main-template-2"/>
 		<panel name="v5-services"/>
 		<widget source="Title" render="Label" position="90,123" size="1200,52" valign="center" halign="center" font="Regular;39" noWrap="1" zPosition="2" transparent="1" foregroundColor="white" backgroundColor="panelblue"/>
-		<widget name="description" position="150,174" size="1080,165" font="Regular;36" foregroundColor="white" backgroundColor="backgroundtop" valign="center" halign="left" transparent="1" zPosition="2"/>
+		<widget name="description" position="150,174" size="1080,54" font="Regular;36" foregroundColor="white" backgroundColor="backgroundtop" valign="center" halign="left" transparent="1" zPosition="2"/>
 		<widget source="plugins" render="Listbox" position="150,228" size="1080,675" foregroundColor="white" backgroundColor="bgdarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="2018-selectbars/bar-75.png" itemHeight="75" transparent="1" enableWrapAround="1" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">
 				{
