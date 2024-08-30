@@ -6,8 +6,8 @@
 		<ePixmap pixmap="myicons/logo.png" position="center,44" size="132,78" alphatest="blend" backgroundColor="transparent" zPosition="2"/>
 	</screen>
 	<screen name="t1-tv">
-		<widget source="session.VideoPicture" render="Pig" position="1357,122" size="503,267" backgroundColor="transparent" transparent="1"/>
-		<eLabel position="1357,122" size="473,267" backgroundColor="transparent" zPosition="4"/>
+		<widget source="session.VideoPicture" render="Pig" position="1343,114" size="502,282" backgroundColor="transparent" transparent="1"/>
+		<eLabel position="1357,122" size="474,266" backgroundColor="transparent" zPosition="4"/>
 		<widget source="session.CurrentService" render="Label" position="1357,345" size="473,36" font="Bold;32" foregroundColor="white" backgroundColor="transparent" borderWidth="2" borderColor="black" transparent="1" valign="center" halign="center" noWrap="1" zPosition="5">
 			<convert type="ServiceName">Name</convert>
 		</widget>

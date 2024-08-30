@@ -6,7 +6,12 @@
 		<panel name="ServiceScan"/>
 	</screen>
 	<screen name="HdmiCECSetupScreen" position="0,0" size="1920,1080" backgroundColor="backgroundmid" flags="wfNoBorder">
-		<panel name="Setup-Default"/>
+		<panel name="Setup"/>
+	</screen>
+	<screen name="HDMICECSetup" position="0,0" size="1920,1080" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="Setup"/>
+		<widget source="current_address" render="Label" position="960,400" size="435,52" font="Regular;24" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="center" transparent="1"/>
+		<widget source="fixed_address" render="Label" position="1395,400" size="435,52" font="Regular;24" foregroundColor="white" backgroundColor="skydarkblue" valign="center" halign="center" transparent="1"/>
 	</screen>
 	<!-- Satfinder / signal finder -->
 	<screen name="Satfinder" position="0,0" size="1920,1080" backgroundColor="backgroundmid" flags="wfNoBorder" title="Satfinder">

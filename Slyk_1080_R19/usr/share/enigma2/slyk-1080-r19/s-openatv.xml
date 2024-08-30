@@ -394,48 +394,45 @@ self.instance.move(ePoint((desktop_w-wsizex)//2, (desktop_h-wsizey)//2))</applet
 	<screen name="HelpMenuATV" position="fill" flags="wfNoBorder" backgroundColor="backgroundmid">
 		<panel name="main-template-2"/>
 		<panel name="v5-services"/>
-		<widget name="description" position="1372,459" size="443,483" font="Regular;27" foregroundColor="white" backgroundColor="backgroundmid" valign="top" transparent="1" zPosition="20"/>
 		<widget source="list" render="Listbox" position="150,228" size="1080,648" foregroundColor="white" backgroundColor="bgdarkblue" backgroundColorSelected="skygold" foregroundColorSelected="skydarkblue" selectionPixmap="2018-selectbars/bar-54.png" itemHeight="54" font="Regular;39" transparent="1" enableWrapAround="1" scrollbarMode="showNever" zPosition="2">
 			<convert type="TemplatedMultiContent">
 				{
 					"templates": {
-						# Simple help with no headings ("flat")
-						# data[1:] = [helpText]
+						# no headings
 						"default": (54,[
-							MultiContentEntryText(pos=(5, 0), size=(1070, 54), font=1, flags=RT_WRAP | RT_VALIGN_CENTER, text=1),
+							MultiContentEntryText(pos=(30, 0), size=(1020, 54), font=1, flags=RT_WRAP | RT_VALIGN_CENTER, text=1),
 							]
 						),
-						# Simple help with headings
-						# data[1:] = [heading, None]  # For heading entries
-						# data[1:] = [None, helpText]  # For help entries
+						# help with headings
 						"default+headings": (54,[
-							MultiContentEntryText(pos=(5, 0), size=(1070, 54), font=0, flags=RT_WRAP | RT_VALIGN_CENTER, text=1),
-							MultiContentEntryText(pos=(28, 0), size=(1052, 54), font=1, flags=RT_WRAP | RT_VALIGN_CENTER, text=2),
+							MultiContentEntryText(pos=(0, 0), size=(1080, 54), font=0, flags=RT_WRAP | RT_VALIGN_CENTER, text=1),
+							MultiContentEntryText(pos=(30, 0), size=(1020, 54), font=1, flags=RT_WRAP | RT_VALIGN_CENTER, text=2),
 							]
 						),
+						
 						# Extended help with no headings
 						# data[1:] = [helpText, extendedHelpText]
-						"extended": (170,[
-							MultiContentEntryText(pos=(5, 0), size=(1070, 54), font=1, flags=RT_WRAP | RT_VALIGN_CENTER, text=1),
-							MultiContentEntryText(pos=(5, 80), size=(1070, 90), color=0x009e9fa4, color_sel=0x009e9fa4, font=3, flags=RT_WRAP | RT_VALIGN_TOP, text=2),
+						"extended": (54,[
+							MultiContentEntryText(pos=(30, 0), size=(1020, 54), font=1, flags=RT_WRAP | RT_VALIGN_CENTER, text=1),
+							# MultiContentEntryText(pos=(0, 0), size=(0, 0), font=3, flags=RT_WRAP | RT_VALIGN_TOP, text=2), # pointless description placed in the lists  - dont show it - height the list item with heading size only
 							],
 						),
 						# Extended help with headings
 						# data[1:] = [heading, None, None]  # For heading entries
 						# data[1:] = [None, helpText, extendedHelpText]  # For help entries
-						"extended+headings": (170,[
-							MultiContentEntryText(pos=(5, 0), size=(1070, 170), font=0, flags=RT_WRAP | RT_VALIGN_CENTER, text=1),
-							MultiContentEntryText(pos=(28, 0), size=(1052, 54), font=1, flags=RT_WRAP | RT_VALIGN_CENTER, text=2),
-							MultiContentEntryText(pos=(28, 60), size=(1052, 90), color=0x009e9fa4, color_sel=0x009e9fa4, font=3, flags=RT_WRAP | RT_VALIGN_TOP, text=3),
+						"extended+headings": (54,[
+							MultiContentEntryText(pos=(0, 0), size=(1080, 54), font=0, flags=RT_WRAP | RT_VALIGN_CENTER, text=1), 
+							MultiContentEntryText(pos=(30, 0), size=(1020, 54), font=1, flags=RT_WRAP | RT_VALIGN_CENTER, text=2),
+							# MultiContentEntryText(pos=(0, 0), size=(0, 0), font=1, flags=RT_WRAP | RT_VALIGN_TOP, text=3), # pointless description placed in the lists  - dont show it - height the list item with heading size only
 							],
 						),
 					},
-					"fonts": [gFont("Regular", 33), gFont("Regular", 30), gFont("Regular", 27), gFont("Regular", 24)],
+					"fonts": [gFont("Regular", 33), gFont("Regular", 30)],
 					"itemHeight": 54
 				}
 			</convert>
 		</widget>
-		<widget name="buttonlist" position="90,123" size="1200,52" valign="center" halign="center" font="Regular;39" noWrap="1" zPosition="2" transparent="1" foregroundColor="white" backgroundColor="panelblue"/>
+		<widget name="buttonlist" position="90,955" size="1200,52" valign="center" halign="center" font="Regular;39" noWrap="1" zPosition="2" transparent="1" foregroundColor="white" backgroundColor="panelblue"/>
 		<panel name="wizard_rc_templateNew"/>
 	</screen>
 	<!-- infobar.py infobar - s-infobar.xml -->
@@ -576,6 +573,36 @@ self.instance.move(ePoint((desktop_w-wsizex)//2, (desktop_h-wsizey)//2))</applet
 		<widget source="introduction" render="Label" position="90,174" size="1200,176" font="Regular;39" foregroundColor="white" backgroundColor="backgroundtop" halign="left" valign="top" transparent="1" zPosition="4"/>
 	</screen>
 	<!-- LocaleSelection.py -->
+	<screen name="LocaleSelection" position="0,0" size="1920,1080" backgroundColor="backgroundmid" flags="wfNoBorder">
+		<panel name="main-template"/>
+		<panel name="settings"/>
+		<panel name="t3-panel-bg"/>
+		<panel name="setup-panel-bars"/>
+		<widget source="locales" render="Listbox" position="center,503" size="1360,432" backgroundColor="skylightrow" selectionPixmap="2018-selectbars/menu-bar-54.png" backgroundPixmap="2018-selectbars/blank.png" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="2">
+			<convert type="TemplatedMultiContent">
+				{
+				"template":
+					[
+					MultiContentEntryPixmapAlphaBlend(pos = (5, 5), size = (90, 45), flags = BT_SCALE, png = 0),  # Flag.
+					MultiContentEntryText(pos = (120, 0), size = (540, 54), font = 0, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 1),  # Language name (Native).
+					MultiContentEntryText(pos = (570, 0), size = (450, 54), font = 0, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 2),  # Language name (English).
+					MultiContentEntryText(pos = (1020, 0), size = (120, 54), font = 0, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 4),  # Package name.
+					MultiContentEntryPixmapAlphaBlend(pos = (1194, 13), size = (74, 28), flags = BT_SCALE, png = 5)  # Status icon.
+					],
+				"fonts": [parseFont("MultiLingual;33")],
+				"itemHeight": 54
+				}
+			</convert>
+		</widget>
+		<widget source="description" render="Label" position="90,174" size="1200,165" font="Regular;36" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="2"/>
+		<ePixmap pixmap="mybuttons/key-help.png" position="1600,946" size="75,36" alphatest="blend"/>
+		<ePixmap pixmap="mybuttons/key-menu.png" position="1685,946" size="75,36" alphatest="blend"/>
+		<widget name="icons" position="0,0" size="45,40" pixmaps="skin_default/icons/menu_download.png,skin_default/icons/menu_off.png,skin_default/icons/menu_on.png" alphatest="blend" scale="1"/>
+		<panel name="New-Buttons-T1"/>
+		<eLabel text="Use" position="152,993" size="75,48" font="Regular;39" foregroundColor="skyblue" backgroundColor="bgdarkblue" valign="top" halign="left" transparent="1" zPosition="1"/>
+		<ePixmap pixmap="myicons/prev-next.png" position="227,1004" size="60,30" alphatest="blend" transparent="1"/>
+		<eLabel text="to change settings and press GREEN to save changes" position="296,993" size="900,48" font="Regular;39" foregroundColor="skyblue" backgroundColor="bgdarkblue" valign="center" halign="left" transparent="1" zPosition="1"/>
+	</screen>
 	<!-- LocationBox.py -->
 	<screen name="LocationBox" position="0,0" size="1920,1080" title="Location Box" flags="wfNoBorder" backgroundColor="backgroundmid">
 		<panel name="main-bg"/>
@@ -1112,13 +1139,11 @@ self["output"].l.setFont(1, gFont("Regular", 27))</applet>
 		<widget source="introduction" render="Label" position="152,993" size="1350,48" font="Regular;39" foregroundColor="skyblue" backgroundColor="bgdarkblue" valign="top" halign="left" transparent="1"/>
 		<panel name="New-Buttons-T1"/>
 	</screen>
-	
-		<screen name="SkinSelection" position="0,0" size="1920,1080" title="Skin Selection" flags="wfNoBorder" backgroundColor="backgroundmid">
+	<screen name="SkinSelection" position="0,0" size="1920,1080" title="Skin Selection" flags="wfNoBorder" backgroundColor="backgroundmid">
 		<panel name="Setup"/>
-		<widget name="Image" position="0,0" size="0,0" alphatest="blend" conditional="Image" transparent="1" zPosition="2" />
-		<widget name="preview" position="0,0" size="0,0" alphatest="blend" conditional="preview" transparent="1" zPosition="3" />
+		<widget name="Image" position="0,0" size="0,0" alphatest="blend" conditional="Image" transparent="1" zPosition="2"/>
+		<widget name="preview" position="0,0" size="0,0" alphatest="blend" conditional="preview" transparent="1" zPosition="3"/>
 	</screen>
-	
 	<!-- SleepTimer.py -->
 	<!-- SleepTimerEdit via standby menu -->
 	<screen name="SleepTimerEdit" position="0,0" size="1920,1080" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4">
@@ -1260,37 +1285,35 @@ self["output"].l.setFont(1, gFont("Regular", 27))</applet>
 		<widget name="UnhandledKeyPixmap" pixmap="myicons/unhandled-key.png" position="0,0" size="113,113" alphatest="blend"/>
 	</screen>
 	<!-- UserInterfacePositioner.py  -->
-	
-		<screen name="OSDCalibration" title="OSD Calibration" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="#000000">
-		<widget source="text" render="Label" position="300,165" zPosition="1" size="1320,180" valign="center" font="Regular;30" halign="center" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1" />
-		<widget name="config" position="225,375" zPosition="1" size="1470,315" itemHeight="45" font="Regular;30" secondfont="Regular;30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColorSelected="#133171" foregroundColorSelected="#ffffff" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1" /> 
+	<screen name="OSDCalibration" title="OSD Calibration" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="#000000">
+		<widget source="text" render="Label" position="300,165" zPosition="1" size="1320,180" valign="center" font="Regular;30" halign="center" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1"/>
+		<widget name="config" position="225,375" zPosition="1" size="1470,315" itemHeight="45" font="Regular;30" secondfont="Regular;30" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColorSelected="#133171" foregroundColorSelected="#ffffff" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1"/>
 		<widget name="description" position="300,713" zPosition="1" size="1320,120" font="Regular;30" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1" conditional="description"/>
 		<widget source="status" render="Label" position="300,713" zPosition="1" size="1320,120" font="Regular;30" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1" conditional="status"/>
-		<eLabel backgroundColor="red" position="0,0" size="1920,1" zPosition="0" />
-		<eLabel backgroundColor="red" position="0,1079" size="1920,1" zPosition="0" />
-		<eLabel backgroundColor="red" position="0,0" size="1,1080" zPosition="0" />
-		<eLabel backgroundColor="red" position="1919,0" size="1,1080" zPosition="0" />
-		<eLabel backgroundColor="green" position="38,38" size="1845,1" zPosition="0" />
-		<eLabel backgroundColor="green" position="38,1041" size="1845,1" zPosition="0" />
-		<eLabel backgroundColor="green" position="38,38" size="1,1005" zPosition="0" />
-		<eLabel backgroundColor="green" position="1881,38" size="1,1005" zPosition="0" />
-		<eLabel backgroundColor="yellow" position="75,75" size="1770,1" zPosition="0" />
-		<eLabel backgroundColor="yellow" position="75,1004" size="1770,1" zPosition="0" />
-		<eLabel backgroundColor="yellow" position="75,75" size="1,930" zPosition="0" />
-		<eLabel backgroundColor="yellow" position="1844,75" size="1,930" zPosition="0" />
-		<eLabel backgroundColor="blue" position="113,113" size="1695,1" zPosition="0" />
-		<eLabel backgroundColor="blue" position="113,966" size="1695,1" zPosition="0" />
-		<eLabel backgroundColor="blue" position="113,113" size="1,855" zPosition="0" />
-		<eLabel backgroundColor="blue" position="1806,113" size="1,855" zPosition="0" />
-		<ePixmap pixmap="buttons/key_red.png" position="500,870" size="38,38" alphatest="blend" />
-		<ePixmap pixmap="buttons/key_green.png" position="774,870" size="38,38" alphatest="blend" />
-		<ePixmap pixmap="buttons/key_yellow.png" position="1049,870" size="38,38" alphatest="blend" />
-		<widget source="key_red" render="Label" position="553,870" size="255,38" noWrap="1" zPosition="1" valign="center" font="Regular;30" halign="left" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1" />
-		<widget source="key_green" render="Label" position="827,870" size="255,38" noWrap="1" zPosition="1" valign="center" font="Regular;30" halign="left" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1" />
-		<widget source="key_yellow" render="Label" position="1101,870" size="255,38" noWrap="1" zPosition="1" valign="center" font="Regular;30" halign="left" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1" />
+		<eLabel backgroundColor="red" position="0,0" size="1920,1" zPosition="0"/>
+		<eLabel backgroundColor="red" position="0,1079" size="1920,1" zPosition="0"/>
+		<eLabel backgroundColor="red" position="0,0" size="1,1080" zPosition="0"/>
+		<eLabel backgroundColor="red" position="1919,0" size="1,1080" zPosition="0"/>
+		<eLabel backgroundColor="green" position="38,38" size="1845,1" zPosition="0"/>
+		<eLabel backgroundColor="green" position="38,1041" size="1845,1" zPosition="0"/>
+		<eLabel backgroundColor="green" position="38,38" size="1,1005" zPosition="0"/>
+		<eLabel backgroundColor="green" position="1881,38" size="1,1005" zPosition="0"/>
+		<eLabel backgroundColor="yellow" position="75,75" size="1770,1" zPosition="0"/>
+		<eLabel backgroundColor="yellow" position="75,1004" size="1770,1" zPosition="0"/>
+		<eLabel backgroundColor="yellow" position="75,75" size="1,930" zPosition="0"/>
+		<eLabel backgroundColor="yellow" position="1844,75" size="1,930" zPosition="0"/>
+		<eLabel backgroundColor="blue" position="113,113" size="1695,1" zPosition="0"/>
+		<eLabel backgroundColor="blue" position="113,966" size="1695,1" zPosition="0"/>
+		<eLabel backgroundColor="blue" position="113,113" size="1,855" zPosition="0"/>
+		<eLabel backgroundColor="blue" position="1806,113" size="1,855" zPosition="0"/>
+		<ePixmap pixmap="buttons/key_red.png" position="500,870" size="38,38" alphatest="blend"/>
+		<ePixmap pixmap="buttons/key_green.png" position="774,870" size="38,38" alphatest="blend"/>
+		<ePixmap pixmap="buttons/key_yellow.png" position="1049,870" size="38,38" alphatest="blend"/>
+		<widget source="key_red" render="Label" position="553,870" size="255,38" noWrap="1" zPosition="1" valign="center" font="Regular;30" halign="left" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1"/>
+		<widget source="key_green" render="Label" position="827,870" size="255,38" noWrap="1" zPosition="1" valign="center" font="Regular;30" halign="left" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1"/>
+		<widget source="key_yellow" render="Label" position="1101,870" size="255,38" noWrap="1" zPosition="1" valign="center" font="Regular;30" halign="left" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1"/>
 		<widget name="footnote" position="0,0" size="0,0" conditional="footnote"/>
 	</screen>
-	
 	<!-- VideoMode.py -->
 	<!-- VideoSetup - s-menus.xml -->
 	<!-- AutoVideoModeLabel - not skinned -->

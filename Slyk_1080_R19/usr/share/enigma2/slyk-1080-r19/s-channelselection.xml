@@ -144,7 +144,6 @@
 			}</convert>
 		</widget>
 		<widget source="session.VideoPicture" render="Pig" position="0,169" size="1320,742" backgroundColor="transparent"/>
-		<widget source="session.VideoPicture" render="Pig" position="0,139" size="1380,802" backgroundColor="transparent" transparent="1"/>
 		<eLabel position="0,169" size="1320,742" backgroundColor="transparent" zPosition="4"/>
 		<widget source="global.CurrentTime" render="Label" position="135,945" size="300,47" font="Regular;36" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="right" transparent="1" zPosition="3">
 			<convert type="Slyk18ClockToText">Slyk18DateFormat2</convert>

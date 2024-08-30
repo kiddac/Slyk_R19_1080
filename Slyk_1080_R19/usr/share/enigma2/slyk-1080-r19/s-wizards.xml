@@ -29,41 +29,40 @@
 		</widget>
 		<panel name="New-Buttons-T1"/>
 	</screen>
-	<screen name="wizard_rc_templateNew">
+	<screen name="wizard_rc_templateNew" position="fill" flags="wfNoBorder">
 		<widget name="rc" position="1528,404" size="154,500" zPosition="10" alphatest="blend" transparent="0"/>
-		<widget alphatest="blend" name="indicatorU0" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU1" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU2" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU3" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU4" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU5" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU6" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU7" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU8" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU9" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU10" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU11" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU12" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU13" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU14" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorU15" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL0" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL1" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL2" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL3" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL4" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL5" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL6" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL7" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL8" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL9" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL10" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL11" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL12" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL13" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL14" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget alphatest="blend" name="indicatorL15" pixmap="skin_default/yellow_circle23x23.png" position="1560,385" offset="30,11" size="23,23" zPosition="11"/>
-		<widget name="label" position="1300,e-280" zPosition="10" size="500,60" transparent="1" font="Regular;24" halign="center"/>
+		<widget alphatest="blend" name="indicatorU0" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU1" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU2" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU3" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU4" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU5" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU6" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU7" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU8" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU9" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU10" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU11" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU12" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU13" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU14" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorU15" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL0" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL1" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL2" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL3" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL4" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL5" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL6" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL7" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL8" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL9" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL10" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL11" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL12" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL13" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL14" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
+		<widget alphatest="blend" name="indicatorL15" pixmap="icons/remotehighlight.png" position="1528,404" offset="11,11" size="23,23" zPosition="11"/>
 	</screen>
 	<screen name="StartWizard" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="backgroundmid">
 		<panel name="WizardTemplate"/>
