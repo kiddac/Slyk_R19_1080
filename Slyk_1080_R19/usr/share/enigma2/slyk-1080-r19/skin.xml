@@ -23,7 +23,7 @@
 	<include filename="s-infobar.xml"/>
 	<include filename="s-plugins.xml"/>
 	<include filename="s-network.xml"/>
-	<!-- <include filename="s-vix.xml" /> -->
+	<include filename="s-vix.xml" />
 	<include filename="s-extras.xml"/>
 	<include filename="s-toppicks3.xml"/>
 	<!-- fonts -->

@@ -67,8 +67,8 @@
 		<eLabel position="90,452" size="1740,592" backgroundColor="bgdarkblue" zPosition="-1"/>
 		<widget name="searchnumber" position="center,400" size="1740,52" font="Regular;39" foregroundColor="white" backgroundColor="panelblue" valign="center" halign="center" transparent="0" zPosition="10"/>
 		<!-- tabsrow used as to define the other variables for the tabs. i.e position and total size -->
-		<widget name="tabsrow" position="90,400" size="1740,52" backgroundColor="panelblue" transparent="0"/>
-		<widget name="firsttab" position="0,0" size="0,0" font="Bold;39" foregroundColor="white" backgroundColor="bgdarkblue" valign="center" halign="center" noWrap="1" transparent="0" zPosition="2"/>
+		<!-- <widget name="tabsrow" position="90,400" size="1740,52" backgroundColor="panelblue" transparent="0"/> -->
+		<!-- <widget name="firsttab" position="0,0" size="0,0" font="Bold;39" foregroundColor="white" backgroundColor="bgdarkblue" valign="center" halign="center" noWrap="1" transparent="0" zPosition="2"/> -->
 		<widget name="guidebouquetlist" position="0,0" size="0,0" font="Regular;36" foregroundColor="white" backgroundColor="panelblue" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2"/>
 	</screen>
 	<screen name="GraphicalEPGTemplate">
@@ -110,9 +110,9 @@
 		<panel name="t3-panel-top-bg"/>
 		<widget name="searchnumber" position="center,186" size="1740,52" font="Regular;39" foregroundColor="white" backgroundColor="panelblue" valign="center" halign="center" transparent="0" zPosition="10"/>
 		<!-- tabsrow used as to define the other variables for the tabs. i.e position and total size -->
-		<widget name="tabsrow" position="90,186" size="1740,52" backgroundColor="panelblue" transparent="0"/>
-		<widget name="firsttab" position="0,0" size="0,0" font="Bold;39" foregroundColor="white" backgroundColor="bgdarkblue" valign="center" halign="center" noWrap="1" transparent="0" zPosition="2"/>
-		<widget name="guidebouquetlist" position="0,0" size="0,0" font="Regular;36" foregroundColor="white" backgroundColor="panelblue" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2"/>
+		<!-- <widget name="tabsrow" position="90,186" size="1740,52" backgroundColor="panelblue" transparent="0"/> -->
+		<!-- <widget name="firsttab" position="0,0" size="0,0" font="Bold;39" foregroundColor="white" backgroundColor="bgdarkblue" valign="center" halign="center" noWrap="1" transparent="0" zPosition="2"/> -->
+		<!-- <widget name="guidebouquetlist" position="0,0" size="0,0" font="Regular;36" foregroundColor="white" backgroundColor="panelblue" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2"/> -->
 	</screen>
 	<!-- graphical infobar - multi epg < > -->
 	<screen name="GraphicalInfoBarEPG1" position="0,0" size="1920,1080" backgroundColor="transparent" transparent="0" flags="wfNoBorder">
@@ -138,9 +138,9 @@
 	<!-- graphical infobar - multi epg < > -->
 	<screen name="GraphicalInfoBarEPG2" position="0,0" size="1920,1080" backgroundColor="transparent" transparent="0" flags="wfNoBorder">
 		<widget name="searchnumber" position="center,670" size="1740,52" font="Regular;39" foregroundColor="white" backgroundColor="panelblue" valign="center" halign="center" transparent="0" zPosition="10"/>
-		<widget name="tabsrow" position="90,670" size="1740,52" backgroundColor="panelblue" transparent="0"/>
-		<widget name="firsttab" position="0,0" size="0,0" font="Bold;39" foregroundColor="white" backgroundColor="bgdarkblue" valign="center" halign="center" noWrap="1" transparent="0" zPosition="2"/>
-		<widget name="guidebouquetlist" position="0,0" size="0,0" font="Regular;36" foregroundColor="white" backgroundColor="panelblue" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2"/>
+		<!-- <widget name="tabsrow" position="90,670" size="1740,52" backgroundColor="panelblue" transparent="0"/> -->
+		<!-- <widget name="firsttab" position="0,0" size="0,0" font="Bold;39" foregroundColor="white" backgroundColor="bgdarkblue" valign="center" halign="center" noWrap="1" transparent="0" zPosition="2"/> -->
+		<!-- <widget name="guidebouquetlist" position="0,0" size="0,0" font="Regular;36" foregroundColor="white" backgroundColor="panelblue" valign="center" halign="left" noWrap="1" transparent="1" zPosition="2"/> -->
 		<eLabel position="90,722" size="1740,322" backgroundColor="bgdarkblue" zPosition="-1"/>
 		<widget name="lab1" position="150,775" size="1620,162" font="Regular;36" foregroundColor="white" backgroundColor="bgdarkblue" valign="center" halign="center" transparent="0" zPosition="2"/>
 		<widget name="timeline_text" position="150,730" size="1620,45" TimelineFont="Regular;36" foregroundColor="skyblue" backgroundColor="bgdarkblue" borderWidth="0" itemHeight="45" transparent="1" zPosition="2"/>
