@@ -113,7 +113,7 @@
 		</borderset>
 	</windowstyle>
 	<windowstyle type="skinned" id="1">
-		<color name="Background" color="messageboxbg"/>
+		<color name="Background" color="black"/>
 		<color name="LabelForeground" color="white"/>
 		<color name="ListboxBackground" color="#00102751"/>
 		<color name="ListboxForeground" color="white"/>

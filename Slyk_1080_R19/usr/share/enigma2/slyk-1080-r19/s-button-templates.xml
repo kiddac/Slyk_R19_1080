@@ -84,6 +84,16 @@
 		<widget name="yellow" position="48,0" size="327,44" font="Regular;33" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" objectTypes="yellow,Button,Label"/>
 		<widget source="key_yellow" render="Label" position="48,0" size="327,44" font="Regular;33" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" objectTypes="key_yellow,StaticText"/>
 	</screen>
+		<screen name="Yellow-New-Button-Small">
+		<ePixmap pixmap="buttons/key_yellow.png" position="0,5" size="36,36" alphatest="blend" transparent="1" objectTypes="key_yellow,Button,Label"/>
+		<ePixmap pixmap="buttons/key_yellow.png" position="0,5" size="36,36" alphatest="blend" transparent="1" objectTypes="yellow,Button,Label"/>
+		<widget source="key_yellow" render="Pixmap" pixmap="buttons/key_yellow.png" position="0,5" size="36,36" alphatest="blend" transparent="1" objectTypes="key_yellow,StaticText">
+			<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget name="key_yellow" position="48,0" size="327,44" font="Regular;30" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" objectTypes="key_yellow,Button,Label"/>
+		<widget name="yellow" position="48,0" size="327,44" font="Regular;30" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" objectTypes="yellow,Button,Label"/>
+		<widget source="key_yellow" render="Label" position="48,0" size="327,44" font="Regular;30" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1" objectTypes="key_yellow,StaticText"/>
+	</screen>
 	<screen name="Blue-New-Button">
 		<ePixmap pixmap="buttons/key_blue.png" position="0,5" size="36,36" alphatest="blend" transparent="1" objectTypes="key_blue,Button,Label"/>
 		<ePixmap pixmap="buttons/key_blue.png" position="0,5" size="36,36" alphatest="blend" transparent="1" objectTypes="blue,Button,Label"/>

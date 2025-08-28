@@ -520,9 +520,11 @@
 		</panel>
 		<panel position="528,996" size="0,44">
 			<panel name="Green-New-Button"/>
+		</panel>	
+		<panel position="903,996" size="0,44">
+			<panel name="Yellow-New-Button-Small"/>
 		</panel>
-		<ePixmap name="yellow" pixmap="buttons/key_yellow.png" position="903,1001" size="36,36" alphatest="blend"/>
-		<widget name="key_yellow" position="951,996" size="267,45" font="Regular;39" valign="center" halign="left" foregroundColor="skyblue" backgroundColor="backgroundbot" noWrap="1" transparent="1"/>
+
 		<panel position="1278,996" size="0,44">
 			<panel name="Blue-New-Button"/>
 		</panel>
