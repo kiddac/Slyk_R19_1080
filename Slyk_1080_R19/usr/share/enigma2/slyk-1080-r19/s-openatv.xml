@@ -597,59 +597,93 @@ self["menu"].l.setFont(0, gFont("Regular", 39))</applet>
 		<widget name="list" position="160,291" size="1600,646" font="Console;27" zPosition="3" transparent="1" backgroundColor="bgdarkblue" foregroundColor="white"/>
 	</screen>
 	<!-- MessageBox.py -->
-	<screen name="MessageBox" position="center,center" size="960,225">
+	<screen name="MessageBox" position="center,center" size="1200,600">
 		<widget name="ErrorPixmap" conditional="ErrorPixmap" pixmap="icons/input_error.png" position="15,0" size="53,53" alphatest="blend"/>
 		<widget name="QuestionPixmap" conditional="QuestionPixmap" pixmap="icons/input_question.png" position="15,0" size="53,53" alphatest="blend"/>
 		<widget name="InfoPixmap" conditional="InfoPixmap" pixmap="icons/input_info.png" position="15,0" size="53,53" alphatest="blend"/>
 		<widget name="icon" conditional="icon" position="15,0" size="53,53" pixmaps="icons/input_question.png,icons/input_info.png,icons/input_info.png,icons/input_error.png,icons/input_info.png" alphatest="blend" scale="1" transparent="1"/>
-		<widget name="text" position="0,10" size="500,0" font="Regular;39" transparent="1" wrap="1"/>
-		<widget name="list" position="0,90" size="500,0" conditional="list" enableWrapAround="1" font="Regular;39" textOffset="15,6" backgroundColor="messageboxbg" transparent="1" selectionPixmap="2018-selectbars/bar-54.png" itemHeight="54" scrollbarMode="showOnDemand"/>
+		<widget name="text" position="98,0" size="1800,0" font="Regular;39" transparent="1" wrap="1"/>
+		<widget name="list" position="0,0" size="1800,0" conditional="list" enableWrapAround="1" font="Regular;39" textOffset="15,6" backgroundColor="messageboxbg" transparent="1" selectionPixmap="2018-selectbars/bar-54.png" itemHeight="54" scrollbarMode="showOnDemand"/>
 		<applet type="onLayoutFinish">
-from enigma import getDesktop, eSize, ePoint
-desktop_w = getDesktop(0).size().width()
-desktop_h = getDesktop(0).size().height()
-listcount = 0
-iconsize = 53
-itemheight = 54
-padding = 45
-minheight = iconsize
-maxwidth = desktop_w - 120
-minwidth = desktop_w // 2
-textwidth = self["text"].instance.size().width()
-width_all = textwidth + iconsize + padding
+from __future__ import division
+from enigma import eSize, ePoint, getDesktop
 
-if width_all &gt; maxwidth:
-	textwidth = maxwidth - iconsize - (padding * 2)
-	
-if width_all &lt; minwidth:
-	textwidth = minwidth - iconsize - (padding * 2)
-listwidth = textwidth
+# Offsets and minimums
+offset_listposx = 15
+offset_listwidth = 15
+offset_listheight = 54
+offset_textwidth = 98
+offset_textheight = 45
+min_width = 960
+min_height = 75
+offset = 45
 
-if not self["text"].text:
-	textsize = (textwidth, 0)
+# Desktop size
+deskwidth = getDesktop(0).size().width()
+deskheight = getDesktop(0).size().height()
+
+# Text widget size
+
+textsize = self["text"].getSize()
+textwidth = textsize[0] + offset_textwidth
+textheight = textsize[1] + offset_textheight
+
+textwidth = max(textwidth, min_width)
+textheight = max(textheight, min_height)
+
+# List widget size
+listwidth = 0
+listheight = 0
+if self.list:
+    try:
+        longest_item = max(len(i[0]) for i in self.list)
+        listwidth = longest_item * offset_listwidth
+        listheight = len(self.list) * offset_listheight
+    except Exception as e:
+        print("*** list size error ***", e)
+
+# Constrain list height
+maxheight = int(deskheight * 0.75) - textheight - (offset_textheight * 2)
+if listheight &gt; maxheight:
+    listheight = maxheight
+
+# Window width
+if textwidth &gt; listwidth:
+    wsizex = textwidth + (offset_listposx * 2)
 else:
-	textsizeoriginal = self["text"].getSize()
-	textsize = (textwidth, textsizeoriginal[1])
-	minheight = max(iconsize, textsize[1])
+    textwidth = listwidth
+    wsizex = listwidth + (offset_listposx * 2)
 
-if self["list"] and self.list is not None:
-	listcount = len(self.list)
-	minheight = max(iconsize, textsize[1]) + (itemheight * listcount)
+# Window height
+wsizey = textheight + listheight
 
-listsize = (textwidth, itemheight * listcount)
+# Ensure not wider than screen
+if wsizex &gt; deskwidth:
+    textwidth = 1800
+    listwidth = 1800
 
-self["text"].instance.resize(eSize(*textsize))
-self["list"].instance.resize(eSize(*listsize))
-self["text"].instance.move(ePoint(iconsize + padding, 0))
-self["list"].instance.move(ePoint(iconsize + padding, textsize[1]+60))
-
-wsizex = listwidth + iconsize + (padding * 2)
-wsizey = textsize[1] + listsize[1] + 90
-if wsizey &lt; minheight:
-	wsizey = minheight
+# Apply window size
 wsize = (wsizex, wsizey)
 self.instance.resize(eSize(*wsize))
-self.instance.move(ePoint((desktop_w - wsizex) // 2, (desktop_h - wsizey) // 2))</applet>
+
+# Resize text widget
+self["text"].instance.resize(eSize(textwidth, textheight))
+
+# Move and resize list widget
+if self.list:
+    text_pos = self["text"].getPosition()
+    text_size = self["text"].getSize()
+    new_y = text_pos[1] + text_size[1] + offset
+    listsize = (wsizex - (offset_listposx * 2), listheight)
+    self["list"].instance.move(ePoint(offset_listposx, new_y))
+    self["list"].instance.resize(eSize(*listsize))
+
+# Center window
+newwidth = wsize[0]
+newheight = wsize[1]
+self.instance.move(ePoint(int((deskwidth - newwidth) // 2), int((deskheight - newheight) // 2)
+))
+</applet>
 	</screen>
 	<screen name="MessageBoxSimple" position="center,center" size="780,15" title="Message">
 		<panel name="MessageBox"/>
@@ -676,13 +710,11 @@ self.instance.move(ePoint((desktop_w - wsizex) // 2, (desktop_h - wsizey) // 2))
 		<widget name="lab1" zPosition="2" position="105,190" size="1170,750" font="Regular;32" backgroundColor="bgdarkblue" foregroundColor="white" valign="center" halign="center" transparent="1"/>
 		<panel name="New-Buttons-T2"/>
 	</screen>
-
 	<!-- hhdmounts - setup mounts -->
 	<screen name="DevicePanelConf" position="0,0" size="1920,1080" backgroundColor="backgroundmid" flags="wfNoBorder" zPosition="4" title="UserManager">
 		<panel name="Setup-Default"/>
 		<widget name="Linconn" position="90,174" size="1200,176" font="Regular;39" foregroundColor="white" backgroundColor="skydarkblue" halign="left" valign="top" transparent="1" zPosition="4"/>
 	</screen>
-
 	<!-- MovieSelection.py -->
 	<!-- MovieSelection - s-movies.xml -->
 	<!-- MultiBooManager.py -->
@@ -1292,23 +1324,19 @@ self["output"].l.setFont(1, gFont("Regular", 27))</applet>
 		<widget source="TranslatorName" render="Label" text="Slyk 1080" position="15,45" size="810,45" font="Bold;36" foregroundColor="white" backgroundColor="messageboxbg" transparent="1" zPosition="3"/>
 		<widget source="TranslationInfo" render="Label" text="KiddaC\npaypal.me/kiddac\n\nSupport for this skin can be found on\nhttps://linuxsat-support.com/board/1462-kiddac-skins/" position="15,105" size="810,375" font="Regular;30" foregroundColor="white" backgroundColor="messageboxbg" transparent="1" zPosition="3"/>
 	</screen>
-
 	<screen name="ImageBackup" position="0,0" size="1920,1080" title="Image Backup" flags="wfNoBorder" backgroundColor="backgroundmid">
 		<panel name="ATVImageBackup" conditional="config"/>
 		<panel name="VIXImageBackup" conditional="list"/>
 	</screen>
-	
 	<!-- Backup Image-->
 	<screen name="ATVImageBackup" position="0,0" size="1920,1080" title="Image Backup" flags="wfNoBorder" backgroundColor="backgroundmid">
 		<panel name="Setup-Default"/>
 		<widget source="description" render="Label" position="90,174" size="1200,165" font="Regular;36" foregroundColor="white" backgroundColor="backgroundtop" valign="top" halign="left" transparent="1" zPosition="2"/>
 	</screen>
-
 	<screen name="ChoiceBox" position="center,center" size="900,720" zPosition="5">
 		<panel name="ATVChoiceBox" conditional="cancelAction"/>
 		<panel name="VIXChoiceBox" conditional="description"/>
 	</screen>
-
 	<!-- ChoiceBox.py -->
 	<screen name="ATVChoiceBox" position="center,center" size="900,720">
 		<widget name="text" position="0,0" size="900,54" font="Regular;39" foregroundColor="white" backgroundColor="messageboxbg" valign="center"/>
